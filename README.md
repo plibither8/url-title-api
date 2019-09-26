@@ -12,7 +12,7 @@ Quick and tiny API that fetches a webpage's title from the `<title></title>` fie
 
 **Example**:
 
-* GET `https://url-title.now.sh/https://mihir.ch`
+* GET [`https://url-title.now.sh/https://mihir.ch`](https://url-title.now.sh/https://mihir.ch)
 * Repsonse (text/plain) `Mihir Chaturvedi · plibither8`
 
 ## License
