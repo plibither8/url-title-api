@@ -1,0 +1,23 @@
+{
+	"name": "url-title-api",
+	"version": 2,
+	"github": {
+		"enabled": true,
+		"silent": true
+	},
+	"builds": [
+		{
+			"src": "index.js",
+			"use": "@now/node-server",
+			"config": {
+				"maxLambdaSize": "45mb"
+			}
+		}
+	],
+	"routes": [
+		{
+			"src": "/(.*)",
+			"dest": "index.js"
+		}
+	]
+}
