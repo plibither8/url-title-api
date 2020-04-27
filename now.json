@@ -1,5 +1,4 @@
 {
-	"name": "url-title-api",
 	"version": 2,
 	"github": {
 		"enabled": true,
@@ -17,7 +16,13 @@
 	"routes": [
 		{
 			"src": "/(.*)",
-			"dest": "index.js"
+			"dest": "index.js",
+			"methods": ["GET"],
+			"headers": {
+				"Access-Control-Allow-Origin": "/*",
+				"Access-Control-Allow-Headers": "Origin, X-Requested-With, Content-Type, Accept",
+				"Access-Control-Allow-Credentials": "true"
+			}
 		}
 	]
 }
