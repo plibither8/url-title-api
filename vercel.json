@@ -4,10 +4,30 @@
     "enabled": true,
     "silent": true
   },
-  "rewrites": [
+  "redirects": [
     {
       "source": "/:path*",
-      "destination": "https://title.mihir.ch/:path*"
+      "destination": "https://title.mihir.ch/:path*",
+      "permanent": true,
+      "headers": {
+        "X-Forwarded-Host": "title.mihir.ch",
+        "X-Forwarded-Proto": "https"
+      }
+    }
+  ],
+  "headers": [
+    {
+      "source": "/(.*)",
+      "headers": [
+        {
+          "key": "Access-Control-Allow-Origin",
+          "value": "*"
+        },
+        {
+          "key": "Access-Control-Allow-Methods",
+          "value": "GET"
+        }
+      ]
     }
   ]
 }
