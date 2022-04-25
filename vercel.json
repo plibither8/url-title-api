@@ -1,0 +1,13 @@
+{
+  "version": 2,
+  "github": {
+    "enabled": true,
+    "silent": true
+  },
+  "rewrites": [
+    {
+      "source": "/:path*",
+      "destination": "https://title.mihir.ch/:path*"
+    }
+  ]
+}
