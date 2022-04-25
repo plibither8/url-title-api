@@ -8,11 +8,7 @@
     {
       "source": "/:path*",
       "destination": "https://title.mihir.ch/:path*",
-      "permanent": true,
-      "headers": {
-        "X-Forwarded-Host": "title.mihir.ch",
-        "X-Forwarded-Proto": "https"
-      }
+      "permanent": true
     }
   ],
   "headers": [
