@@ -1,0 +1,13 @@
+name = "url-title-api"
+type = "javascript"
+zone_id = ""
+account_id = ""
+route = "title.mihir.ch/*"
+workers_dev = true
+compatibility_date = "2022-04-25"
+
+[build]
+command = "npm install && npm run build"
+
+[build.upload]
+format = "service-worker"
