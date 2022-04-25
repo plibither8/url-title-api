@@ -9,7 +9,7 @@ fastify.get("/*", async (req, reply) => {
     headers["cf-connecting-ip"] ||
     headers["x-real-ip"] ||
     headers["x-forwarded-for"];
-  console.log(headers.referer, ip);
+  console.log(headers.host, headers.referer, ip);
   const { path } = req.urlData();
   const url = "http://" + decodeURIComponent(path).substring(1);
   const rawText = await fetch(url)
