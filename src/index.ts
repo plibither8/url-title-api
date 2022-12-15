@@ -1,9 +1,9 @@
-import { Router } from "itty-router";
+import { Hono } from "hono";
 
-const router = Router();
+const app = new Hono();
 
-router.get("*", async (request) => {
-  const { pathname } = new URL(request.url);
+app.get("*", async (c) => {
+  const { pathname } = new URL(c.req.url);
   let requestedUrl: string = pathname.substring(1);
   ["http:/", "https:/"].forEach((prefix) => {
     if (requestedUrl.startsWith(prefix))
@@ -15,14 +15,10 @@ router.get("*", async (request) => {
     const url = new URL(requestedUrl);
     const html = await fetch(url.href).then((res) => res.text());
     const matches = html.match(/<title>(.*?)<\/title>/);
-    return new Response(matches?.[1] ?? "");
-  } catch (err: any) {
-    return new Response(`Error: ${err.message}`, { status: 500 });
+    return c.text(matches?.[1] ?? "");
+  } catch (err) {
+    return c.text(`Error: ${err}`, 500);
   }
 });
 
-export default {
-  async fetch(request: Request): Promise<Response> {
-    return router.handle(request);
-  },
-};
+export default app;

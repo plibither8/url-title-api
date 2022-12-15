@@ -4,7 +4,7 @@ Quick and tiny API that fetches a webpage's title from the `<title></title>` fie
 
 ## Usage
 
-**Base URL:** [https://title.mihir.ch](https://title.mihir.ch) OR [https://url-title.vercel.app](https://url-title.vercel.app)
+**Base URL:** [https://title.mihir.ch](https://title.mihir.ch).
 
 **GET** `/:url`
 
@@ -12,8 +12,8 @@ Quick and tiny API that fetches a webpage's title from the `<title></title>` fie
 
 **Example**:
 
-- GET [https://url-title.vercel.app/https://mihir.ch](https://url-title.vercel.app/https://mihir.ch)
-- Response (text/plain) `Mihir Chaturvedi · plibither8`
+- GET [https://title.mihir.ch/https://example.com](https://title.mihir.ch/https://example.com)
+- Response (text/plain) `Example Domain`
 
 ## License
 
